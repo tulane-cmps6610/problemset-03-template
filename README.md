@@ -1,7 +1,5 @@
 # CMPS 6610 Problem Set 03
 
-In this lab, we will xx. 
-
 To complete this lab, follow the instructions in [problemset-03.md](problemset-03.md) ([PDF version](problemset-03.pdf)). Below you'll find important and useful information about submitting your work, using git, and testing your code. 
 
 ## Turning in your work
