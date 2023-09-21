@@ -275,7 +275,7 @@ to indicate possible concurrency in the specification you provide.
 **enter answer in `answers.md`**
 
 
-***6b.** Recall that the Karatsaba-Ofman algorithm was able to multiply two
+**6b.** Recall that the Karatsaba-Ofman algorithm was able to multiply two
 $n$-bit numbers with $O(n^{log_2 3})$ work. Devise an algorithm that
 multiplies two $n$-bit numbers with $O(n \log n)$ work. Is it
 reasonable to use this algorithm, instead of the Karatsaba-Ofman
