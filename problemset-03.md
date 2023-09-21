@@ -213,13 +213,22 @@ largest sum.
 
 **4a.** Give a lower bound on the work required for this problem.
 
+**enter answer in `answers.md`**
+
+
 **4b.** Give a divide-and-conquer algorithm for this problem in SPARC
 and prove its correctness. You're welcome to use a
 divide-and-conquer sequence operation or devise your own approach from
 scratch.
 
+**enter answer in `answers.md`**
+
+
 **4c.** State the work and span of your algorithm, and compare it to
 the lower bound you gave above.
+
+**enter answer in `answers.md`**
+
 
 ## Part 5: Black Hats and White Hats
 
