@@ -121,7 +121,7 @@ While of course we could just fix `doc_index_map` to not emit duplicates, we wil
 .  
 .  
 
-## *Part 3: Parenthesis Matching
+## Part 3: Parenthesis Matching
 
 A common task of compilers is to ensure that parentheses are matched. That is, each open parenthesis is followed at some point by a closed parenthesis. Furthermore, a closed parenthesis can only appear if there is a corresponding open parenthesis before it. So, the following are valid:
 
@@ -205,32 +205,8 @@ the most efficient implementation of `scan` (that uses contraction) from class. 
 . 
 
 
-## Part 4: Finding the Maximum Subarray
 
-For this problem let's consider the *maximum subarray problem*. Given
-an array $a$, the goal is to find the contiguous sequence with the
-largest sum. 
-
-**4a.** Give a lower bound on the work required for this problem.
-
-**enter answer in `answers.md`**
-
-
-**4b.** Give a divide-and-conquer algorithm for this problem in SPARC
-and prove its correctness. You're welcome to use a
-divide-and-conquer sequence operation or devise your own approach from
-scratch.
-
-**enter answer in `answers.md`**
-
-
-**4c.** State the work and span of your algorithm, and compare it to
-the lower bound you gave above.
-
-**enter answer in `answers.md`**
-
-
-## Part 5: Black Hats and White Hats
+## Part 4: Black Hats and White Hats
 
 A "white hat" conducts hacking activities for the common good, while a
 "black hat" hacker does so for nefarious reasons. Let's consider a
@@ -251,7 +227,7 @@ $B$ then there are several possible outcomes:
 |$B$ is a black hat | $A$ is a white hat | at least one is bad |
 |$B$ is a black hat | $A$ is a black hat | at least one is bad |
 
-**5a.** Show that if more than $n/2$ students are black hats, you
+**4a.** Show that if more than $n/2$ students are black hats, you
 cannot determine which students are white hats based on a pairwise
 test. Note that you must assume the black hats are conspiring to fool
 you.
@@ -260,7 +236,7 @@ you.
 **enter answer in `answers.md`**
 
 
-**5b.** Consider the problem of finding a single white hat, assuming
+**4b.** Consider the problem of finding a single white hat, assuming
 strictly more than $n/2$ of the students are white hats. Show that
 $n/2$ pairwise interviews is enough to reduce the problem size by a
 constant fraction. 
@@ -268,27 +244,8 @@ constant fraction.
 **enter answer in `answers.md`**
 
 
-**5c.** Using the above show that all white hats can be identified
+**4c.** Using the above show that all white hats can be identified
 using $\Theta(n)$ pairwise interviews.
-
-**enter answer in `answers.md`**
-
-
-## Part 6: Fun with Convolutions
-
-
-**6a.** Write the FFT algorithm discussed in class in SPARC. Be sure
-to indicate possible concurrency in the specification you provide.
-
-
-**enter answer in `answers.md`**
-
-
-**6b.** Recall that the Karatsaba-Ofman algorithm was able to multiply two
-$n$-bit numbers with $O(n^{log_2 3})$ work. Devise an algorithm that
-multiplies two $n$-bit numbers with $O(n \log n)$ work. Is it
-reasonable to use this algorithm, instead of the Karatsaba-Ofman
-algorithm, in practice? Why or why not?
 
 **enter answer in `answers.md`**
 

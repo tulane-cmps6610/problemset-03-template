@@ -39,3 +39,23 @@ Place all written answers from `problemset-03.md` here for easier grading.
 
 
 - **3f.**
+
+
+
+
+- **4a.**
+
+
+
+
+- **4b.**
+
+
+
+
+
+- **4c.**
+
+
+
+
