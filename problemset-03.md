@@ -55,71 +55,42 @@ is the work and span of the resulting algorithm for `rsearch`?
 .  
 
 
-## Part 2: Document indexing
+## Part 2: Data Deduplication
 
-A key component of search engines is a data structure called an **inverted index** which maps each word to the list of documents it appears in.
+In a distributed (i.e. "cloud") setting we may have collections of
+data that contain duplicates. Service providers want to save space on
+their storage hardware by storing only unique copies of data
+elements. Let's design algorithms for this task, both in a
+single list and in a distributed setting.
 
-Assume we have three documents with ids 0,1,2:
-
-```python
-[
-    ('document one is cool is it', 0),
-    ('document two is also cool', 1),
-    ('document three is kinda neat', 2)
-]
-```
-
-then an inverted index would be
-
-```python
-[('also', [1]),
- ('cool', [0, 1]),
- ('document', [0, 1, 2]),
- ('is', [0, 1, 2]),
- ('it', [0]),
- ('kinda', [2]),
- ('neat', [2]),
- ('one', [0]),
- ('three', [2]),
- ('two', [1])]
-```
-
-To implement this in map-reduce, we will implement our own map and reduce functions.
-
-The map function `doc_index_map` is already complete. E.g.
-
-```python
->>> doc_index_map(('document one is cool is it', 0))
-    [('document', 0), ('one', 0), ('is', 0), ('cool', 0), ('is', 0), ('it', 0)] 
-```
-
-The reduce function is also implemented, but it has a bug:
-
-```python
->>> doc_index_reduce(['is', [0,0,1,2]])
-    ('is', [0,0,1,2])
-```
-
-The problem is that document ids are duplicated in the final output (e.g., `0` in the above example).
-
-While of course we could just fix `doc_index_map` to not emit duplicates, we will instead modify the `doc_index_reduce` function. We will do so with the help of another function `dedup` which takes in two sorted, deduplicated lists and returns their concatenation without any duplicates:
-
-```python
->>> dedup([1,2,3], [3,4,5])
-[1,2,3,4,5]
-```
-
-**2a.** Implement `dedup` **in constant time** and test it with `test_dedup`. 
-
-**2b.** Modify the `doc_index_reduce` function to use both `dedup` and `reduce`. Test it with `test_doc_index_reduce`.
-
+**2a. List deduplication** Suppose you are given a list $A$ of $n$ unsorted
+elements with duplicates. Design an algorithm and provide a SPARC specification for a function `dedup` that
+takes $A$ as an argument and returns the distinct elements of $A$
+(preserving order). Analyze the work and span of your algorithm.
 
 .  
+. 
+
+
+**2b. Deduplication in a network** Imagine now that we have a
+collection of lists $A_0, \ldots, A_m$, where each list has $n$
+elements. In the distributed setting all we care about is identifying the unique
+elements, without regard to the order in which they appear in the
+input lists. Design an algorithm and provide a SPARC specification for a function `multi-dedup` that
+takes $A$ as an argument and returns the distinct elements of $A$
+(preserving order). Analyze the work and span of your algorithm and
+compare it to the work and span from part a) above.
+
 .  
+. 
+
+**2c. Sequence operations** Are any of our sequence operations useful
+for either of these problem settings? If so, which operations are useful and
+why? If not, why do they not help us?
+
 .  
-.  
-.  
-.  
+. 
+
 
 ## Part 3: Parenthesis Matching
 
@@ -171,7 +142,7 @@ the most efficient implementation of `scan` (that uses contraction) from class. 
 
 
 
-**3e. A Divide-and-Conquer Solution** Implement
+**3e**. A Divide-and-Conquer Solution** Implement
   `parens_match_dc_helper`, a divide and conquer solution to the
   problem. A key observation is that we *cannot* simply solve each
   subproblem using the above solutions and combine the results. E.g.,
@@ -205,47 +176,4 @@ the most efficient implementation of `scan` (that uses contraction) from class. 
 . 
 
 
-
-## Part 4: Black Hats and White Hats
-
-A "white hat" conducts hacking activities for the common good, while a
-"black hat" hacker does so for nefarious reasons. Let's consider a
-computer security class with $n$ students who are all either white hat
-or black hat hackers. You're the instructor, and you don't know who is
-a white hat or a black hat, but all of the student do. 
-
-Your goal is to identify the white hats and you're allowed to ask a
-pair of students about one another. White hats will always tell the
-truth, but you cannot trust a black hat's response. For a pair of students $A$ and
-$B$ then there are several possible outcomes:
-
-
-|$A$ says | $B$ says | Conclusion |
-|---------|----------|------------|
-|$B$ is a white hat | $A$ is a white hat | both are good, or both are bad |
-|$B$ is a white hat | $A$ is a black hat | at least one is bad |
-|$B$ is a black hat | $A$ is a white hat | at least one is bad |
-|$B$ is a black hat | $A$ is a black hat | at least one is bad |
-
-**4a.** Show that if more than $n/2$ students are black hats, you
-cannot determine which students are white hats based on a pairwise
-test. Note that you must assume the black hats are conspiring to fool
-you.
-
-
-**enter answer in `answers.md`**
-
-
-**4b.** Consider the problem of finding a single white hat, assuming
-strictly more than $n/2$ of the students are white hats. Show that
-$n/2$ pairwise interviews is enough to reduce the problem size by a
-constant fraction. 
-
-**enter answer in `answers.md`**
-
-
-**4c.** Using the above show that all white hats can be identified
-using $\Theta(n)$ pairwise interviews.
-
-**enter answer in `answers.md`**
 
