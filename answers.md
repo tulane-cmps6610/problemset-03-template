@@ -27,7 +27,27 @@ Place all written answers from `problemset-03.md` here for easier grading.
 
 
 
+- **2a.**
+
+
+
+
+
+- **2b.**
+
+
+
+
+
+- **2c.**
+
+
+
+
+
+
 - **3b.**
+
 
 
 
@@ -39,22 +59,6 @@ Place all written answers from `problemset-03.md` here for easier grading.
 
 
 - **3f.**
-
-
-
-
-- **4a.**
-
-
-
-
-- **4b.**
-
-
-
-
-
-- **4c.**
 
 
 
