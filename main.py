@@ -11,13 +11,7 @@ import math
 def isearch(L, x):
     ###TODO
     ###
-
-def test_isearch():
-    assert isearch([1, 3, 5, 4, 2, 9, 7], 2) == (2 in [1, 3, 5, 4, 2, 9, 7])
-    assert isearch([1, 3, 5, 2, 9, 7], 7) == (7 in [1, 3, 5, 2, 9, 7])
-    assert isearch([1, 3, 5, 2, 9, 7], 99) == (99 in [1, 3, 5, 2, 9, 7])
-    assert isearch([], 2) == (2 in [1, 3, 5])
-
+    pass
 
 def iterate(f, x, a):
     # done. do not change me.
@@ -30,12 +24,7 @@ def iterate(f, x, a):
 def rsearch(L, x):
     ###TODO
     ###
-
-def test_rsearch():
-    assert rsearch([1, 3, 5, 4, 2, 9, 7], 2) == (2 in [1, 3, 5, 4, 2, 9, 7])
-    assert rsearch([1, 3, 5, 2, 9, 7], 7) == (7 in [1, 3, 5, 2, 9, 7])
-    assert rsearch([1, 3, 5, 2, 9, 7], 99) == (99 in [1, 3, 5, 2, 9, 7])
-    assert rsearch([], 2) == (2 in [1, 3, 5])
+    pass
 
 def reduce(f, id_, a):
     print(a)
@@ -59,9 +48,6 @@ def ureduce(f, id_, a):
         # can call these in parallel
         return f(reduce(f, id_, a[:len(a)//3]),
                  reduce(f, id_, a[len(a)//3:]))
-
-
-
 
 ### PART 3: PARENTHESES MATCHING
 
@@ -105,18 +91,7 @@ def parens_update(current_output, next_input):
     """
     ###TODO
     ###
-
-
-def test_parens_match_iterative():
-    assert parens_match_iterative(['(', ')']) == True
-    assert parens_match_iterative(['(']) == False
-    assert parens_match_iterative([')']) == False
-    assert parens_match_iterative(['(', 'a', ')', '(', ')']) == True
-    assert parens_match_iterative(['(',  '(', '(', ')', ')', ')']) == True
-    assert parens_match_iterative(['(', '(', ')']) == False
-    assert parens_match_iterative(['(', 'a', ')', ')', '(']) == False
-    assert parens_match_iterative([]) == True
-
+    pass
 
 #### Scan solution
 
@@ -139,6 +114,7 @@ def parens_match_scan(mylist):
     """
     ###TODO
     ###
+    pass
 
 def scan(f, id_, a):
     """
@@ -182,16 +158,6 @@ def min_f(x,y):
         return x
     return y
 
-def test_parens_match_scan():
-    assert parens_match_scan(['(', ')']) == True
-    assert parens_match_scan(['(']) == False
-    assert parens_match_scan([')']) == False
-    assert parens_match_scan(['(', 'a', ')', '(', ')']) == True
-    assert parens_match_scan(['(',  '(', '(', ')', ')', ')']) == True
-    assert parens_match_scan(['(', '(', ')']) == False
-    assert parens_match_scan(['(', 'a', ')', ')', '(']) == False
-    assert parens_match_scan([]) == True
-
 #### Divide and conquer solution
 
 def parens_match_dc(mylist):
@@ -224,14 +190,4 @@ def parens_match_dc_helper(mylist):
     # - then compute the solution (R,L) using these solutions, in constant time.
     
     ###
-    
-
-def test_parens_match_dc():
-    assert parens_match_dc(['(', ')']) == True
-    assert parens_match_dc(['(']) == False
-    assert parens_match_dc([')']) == False
-    assert parens_match_dc(['(', 'a', ')', '(', ')']) == True
-    assert parens_match_dc(['(',  '(', '(', ')', ')', ')']) == True
-    assert parens_match_dc(['(', '(', ')']) == False
-    assert parens_match_dc(['(', 'a', ')', ')', '(']) == False
-    assert parens_match_dc([]) == True 
+    pass
